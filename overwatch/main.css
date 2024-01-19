@@ -1,0 +1,119 @@
+body {
+    /* 여백이 보이지 않도록 margin, padding을 0으로 지정 */
+    /* margin: 0;
+    padding: 0; */
+    /* 높이는 뷰포트 기준으로 만듦 => 구글링으로 검색할 것 */
+    height: 100vh;
+    background-image: url("./images/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    /* ※1> 수평/중앙 정렬은 부모요소에서 flex, justify-content로 해도 되지만, 
+    자식 요소에서 margin: 0 auto; 로 처리 가능
+    */
+    /* display: flex;
+    justify-content: center; */
+    padding: 70px 0;
+}
+
+.container .heroes {
+    display: flex;
+    flex-wrap: wrap;
+    /* heroes의 범위를 알기 쉽게 임의로 색을 지정 */
+    /* background-color: orange; */
+
+    /* 주축 기준으로 중앙 정렬 */
+    justify-content: center;
+
+    /* max-width: 이 값을 유지하려 하지만, 그거보다 작으면 유지하려함(어느정도 변화됨) */
+    max-width: 700px;
+
+    /* ※1> 수평/중앙 정렬은 부모요소에서 flex, justify-content로 해도 되지만, 
+    자식 요소에서 margin: 0 auto; 로 처리 가능 */
+    margin: 0 auto;
+    padding: 20px 40px;
+}
+
+.container .heroes .hero {
+    width: 80px;
+    height: 84px;
+    background-color: #555;
+    margin: 4px;
+    /* 사진 테두리 */
+    border: 3px solid #fff;
+    transform: skewX(-14deg);
+    border-radius: 10px;
+    box-sizing: border-box;
+    /* z-index: 0; => 있어도 되고 없어도 됨 */
+    transition: 
+        transform 0.1s, 
+        background-color 0.5s;
+    overflow: hidden;
+}
+
+.container .heroes .hero:hover {
+    background-color: orange;
+    transform: skewX(-14deg) scale(1.5);
+    /* z-index 속성이 설정된 요소 간에는 크면 클 수록 앞으로 올라오고, 작으면 작을수록 뒤로 내려갑니다 */
+    z-index: 1;
+}
+
+/* html 태그에 링크하여 이미지 첨부할 수 있으나, 
+   유지보수를 위해 CSS에서 하는 것이 best */
+.container .heroes .hero .image-hero {
+    width: 100%;
+    height: 100%;
+    transform: skewX(14deg) translateX(-1px);
+    background-position: center;
+    background-size: 88px;
+    background-repeat: no-repeat;
+}
+
+.container .heroes .hero:nth-child(1) .image-hero { background-image: url(./images/hero1.png); }
+.container .heroes .hero:nth-child(2) .image-hero { background-image: url(./images/hero2.png); }
+.container .heroes .hero:nth-child(3) .image-hero { background-image: url(./images/hero3.png); }
+.container .heroes .hero:nth-child(4) .image-hero { background-image: url(./images/hero4.png); }
+.container .heroes .hero:nth-child(5) .image-hero { background-image: url(./images/hero5.png); }
+.container .heroes .hero:nth-child(6) .image-hero { background-image: url(./images/hero6.png); }
+.container .heroes .hero:nth-child(7) .image-hero { background-image: url(./images/hero7.png); }
+.container .heroes .hero:nth-child(8) .image-hero { background-image: url(./images/hero8.png); }
+.container .heroes .hero:nth-child(9) .image-hero { background-image: url(./images/hero9.png); }
+.container .heroes .hero:nth-child(10) .image-hero { background-image: url(./images/hero10.png); }
+
+.container .heroes .hero:nth-child(11) .image-hero { background-image: url(./images/hero11.png); }
+.container .heroes .hero:nth-child(12) .image-hero { background-image: url(./images/hero12.png); }
+.container .heroes .hero:nth-child(13) .image-hero { background-image: url(./images/hero13.png); }
+.container .heroes .hero:nth-child(14) .image-hero { background-image: url(./images/hero14.png); }
+.container .heroes .hero:nth-child(15) .image-hero { background-image: url(./images/hero15.png); }
+.container .heroes .hero:nth-child(16) .image-hero { background-image: url(./images/hero16.png); }
+.container .heroes .hero:nth-child(17) .image-hero { background-image: url(./images/hero17.png); }
+.container .heroes .hero:nth-child(18) .image-hero { background-image: url(./images/hero18.png); }
+.container .heroes .hero:nth-child(19) .image-hero { background-image: url(./images/hero19.png); }
+.container .heroes .hero:nth-child(20) .image-hero { background-image: url(./images/hero20.png); }
+
+.container .heroes .hero:nth-child(21) .image-hero { background-image: url(./images/hero21.png); }
+.container .heroes .hero:nth-child(22) .image-hero { background-image: url(./images/hero22.png); }
+.container .heroes .hero:nth-child(23) .image-hero { background-image: url(./images/hero23.png); }
+.container .heroes .hero:nth-child(24) .image-hero { background-image: url(./images/hero24.png); }
+.container .heroes .hero:nth-child(25) .image-hero { background-image: url(./images/hero25.png); }
+.container .heroes .hero:nth-child(26) .image-hero { background-image: url(./images/hero26.png); }
+.container .heroes .hero:nth-child(27) .image-hero { background-image: url(./images/hero27.png); }
+.container .heroes .hero:nth-child(28) .image-hero { background-image: url(./images/hero28.png); }
+.container .heroes .hero:nth-child(29) .image-hero { background-image: url(./images/hero29.png); }
+.container .heroes .hero:nth-child(30) .image-hero { background-image: url(./images/hero30.png); }
+
+.container .heroes .hero:nth-child(31) .image-hero { background-image: url(./images/hero31.png); }
+.container .heroes .hero:nth-child(32) .image-hero { background-image: url(./images/hero32.png); }
+
+.logo {
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.logo img {
+    width: 100%;
+}
