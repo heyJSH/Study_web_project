@@ -73,6 +73,7 @@ button {
     display: flex;
     /* '당신의 공간을 에어비앤비하세요'와 오른쪽에 있는 아이템과 거리주기 */
     gap: 8px;
+    cursor: pointer;
 }
 
 #header-right-section #do-airbnb {
@@ -81,13 +82,13 @@ button {
     align-items: center;
     font-size: 14px;
     font-weight: 600;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #header-right-section #earth {
     display: flex;
     padding-left: 8px;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #header-right-section #profile-section {
