@@ -3,7 +3,7 @@ header {
     border: none;
     display: flex;
     justify-content: space-between;
-    padding: 0 80px;
+    padding: 30px 80px;
 }
 
 #logo {
