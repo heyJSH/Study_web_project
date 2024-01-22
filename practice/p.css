@@ -1,0 +1,13 @@
+/*화면 너비가 480px 보다 크면*/
+@media (min-width:480px) {
+    .mobile-top-bar {
+        display: none;
+    }
+}
+
+/*화면 너비가 480px 보다 작으면*/
+@media (max-width:480px) {
+    .pc-top-bar {
+        display: none;
+    }
+}

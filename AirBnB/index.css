@@ -225,3 +225,35 @@ main #place-items-wrapper .place-list-item .place-image-wrapper img {
     align-items: center;
     gap: 8px;
 }
+/* 화면 너비가 1,000px보다 크면 pc화면 */
+@media (min-width:1000px) {
+    .pc {
+        display: none;
+    }
+
+    .tablet {
+        display: none;
+    }
+}
+
+/* 화면 너비가 600px~1000px 사이이면 tablet화면 */
+@media (min-width:600px) and (max-width:1000px) {
+    .pc {
+        display: none;
+    }
+
+    .mobile {
+        display: none;
+    }
+}
+
+/*화면 너비가 600px 보다 작으면 mobile화면 */
+@media (max-width:600px) {
+    .pc {
+        display: none;
+    }
+
+    .tablet {
+        display: none;
+    }
+}
