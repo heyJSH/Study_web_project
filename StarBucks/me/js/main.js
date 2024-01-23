@@ -39,3 +39,7 @@ $('input').focus(function() {
 $('input').blur(function() {
     $('input').attr('placeholder', '')
 });
+
+window.addEventListener('scroll', _.throttle(function() {
+
+}));

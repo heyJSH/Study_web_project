@@ -1,6 +1,7 @@
 body {
     /* google font => 구글 나눔고딕 */
     font-family: 'Nanum Gothic', sans-serif;
+    height: 3000px;
 }
 
 /* google material icon */
@@ -26,9 +27,11 @@ a {
 header {
     background-color: rgb(246, 245, 240);
     border-bottom: 1px solid #c8c8c8;
+    position: fixed;
+        width: 100%;
 }
 
-.inner {
+header .inner {
     width: 1100px;
     /* 범위를 알기위한 배경 색 */
     /* background-color: orange; */
@@ -41,6 +44,7 @@ header {
 header>.inner {
     height: 120px;
     background-color: rgb(246, 245, 240);
+    /* z-index: 1; */
 }
 
 header .inner .logo {
@@ -152,39 +156,92 @@ header .main-menu .item {
     font-size: 13px;
 }
 
-header .main-menu .item .item__name {
+header .main-menu .item .item_name {
     padding: 10px 20px 34px 20px;
 }
 
-header .main-menu .item:hover .item__name {
+header .main-menu .item:hover .item_name {
     background-color: #2C2A29;
     color: rgb(102, 139, 27);
     border-radius: 6px 6px 0 0;
 }
 
-header .main-menu .item .item__contents {
+header .main-menu .item .item_contents {
     width: 100%;
     position: fixed;
     left: 0;
     display: none;
 }
 
-header .main-menu .item:hover .item__contents {
+header .main-menu .item:hover .item_contents {
     display: block;
 }
 
-header .main-menu .item .item__contents .contents__menu {
-    background-color: red;
-    height: 200px;
+header .main-menu .item .item_contents .contents_menu {
+    background-color: #2C2A29;
+    /* height: 270px; */
     color: white;
 }
 
-header .main-menu .item .item__contents .contents__menu ul.inner {
+header .main-menu .item .item_contents .contents_menu>ul {
     padding: 20px 0;
     display: flex;
 }
 
-header .main-menu .item .item__contents .contents__texture {
-    background-color: orange;
-    height: 100px;
+header .main-menu .item .item_contents .contents_menu>ul>li {
+    width: 220px;
+}
+
+header .main-menu .item .item_contents .contents_menu>ul>li h4 {
+    padding: 3px 0 12px 0;
+    font-size: 14px;
+    color: #fff;
+}
+
+header .main-menu .item .item_contents .contents_menu>ul>li ul li {
+    padding: 5px 0;
+    font-size: 12px;
+    color: #999;
+    cursor: pointer;
+}
+
+header .main-menu .item .item_contents .contents_menu>ul>li ul li:hover {
+    color: rgb(102, 139, 27);
+}
+
+header .main-menu .item .item_contents .contents_texture {
+    padding: 26px 0;
+    /* height: 100px; */
+    background-image: url(../images/main_menu_pattern.jpg);
+    font-size: 12px;
+}
+
+header .main-menu .item .item_contents .contents_texture h4 {
+    color: #999;
+    font-weight: 900;
+    margin-bottom: 7px;
+}
+
+header .main-menu .item .item_contents .contents_texture p {
+    color: rgb(102, 139, 27);
+    margin: 4px 0 18px;
+}
+
+/* 사진 고정 */
+header .badges {
+    position: absolute;
+    top: 132px;
+    right: 12px;
+    /* 상단 메뉴를 볼 때, badges를 가리기 위함 
+       =>header .inner 에서 z-index 값을 +1 해주어도 됨 */
+    z-index: -1;
+}
+
+header .badges .badge {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    cursor: pointer;
+    /* 그림자: 위치, 크기 */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0.15);
 }
