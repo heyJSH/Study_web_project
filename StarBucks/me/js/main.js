@@ -40,6 +40,22 @@ $('input').blur(function() {
     $('input').attr('placeholder', '')
 });
 
-window.addEventListener('scroll', _.throttle(function() {
-
-}));
+// 스크롤 내리면 배지 숨기기
+window.addEventListener('scroll', _.throttle(function () {
+    console.log(window.scrollY);
+    if(window.scrollY > 500) {
+      //  배지 숨기기
+    //   $('.badges').hide();
+      // gsap.to(요소, 지속시간, 옵션)
+      gsap.to('header .badges', 0.4, {
+        opacity: 0
+      });
+    }else{
+      // 배지 보이기
+    //   $('.badges').show();
+        gsap.to('header .badges', 0.4, {
+            opacity: 1
+        });
+    }
+  
+  }, 300)); // 0.3초
