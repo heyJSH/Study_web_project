@@ -79,6 +79,46 @@ new Swiper('.promotion .swiper-container', {
     delay: 3000,  // 3초마다 슬라이드 바뀜
   },
   loop: true,
+  pagination: {   // 페이지 번호 사용 
+    el: '.promotion .swiper-pagination', // 페이지 번호 요소 선택자
+    clickable: true,  // 페이지 번호 클릭 제어 가능
+  },
+  navigation: {   // 슬라이드 이전/다음 버튼 사용
+    prevEl: '.promotion .swiper-prev',
+    nextEl: '.promotion .swiper-next',
+  }
 });
 
+// vanills js
+// promotion 슬라이드 토글 기능
+/*
+const promotionEl = document.querySelector('.promotion');
+const promotionToggleBtn = document.querySelector('.toggle-promotion');
+let isHidePromotion = false;
+promotionToggleBtn.addEventListener('click', function() {
+  isHidePromotion = !isHidePromotion
 
+  if (isHidePromotion) {
+    // 숨김 처리
+    promotionEl.classList.add('hide');
+  } else {
+    // 보임 처리
+    promotionEl.classList.remove('hide');
+  }
+});
+*/
+
+// jquery js
+// promotion 슬라이드 토글 기능
+let isHidePromotion = false;
+$('.toggle-promotion').click(function() {
+  isHidePromotion = !isHidePromotion
+
+  if (isHidePromotion) {
+    // 숨김 처리
+    $('.promotion').attr('class', 'promotion hide');
+  } else {
+    // 보임 처리
+    $('.promotion').attr('class', 'promotion');
+  }
+});

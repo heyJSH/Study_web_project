@@ -1,7 +1,7 @@
 body {
   /* google font => 구글 나눔고딕 */
-    font-family: 'Nanum Gothic', sans-serif;
-  /* height: 3000px; */
+  font-family: 'Nanum Gothic', sans-serif;
+  height: 3000px;
 }
 
 /* google material icon */
@@ -61,6 +61,15 @@ a {
   background-color: #592B18;
   color: #fff;
 }
+.btn.btn--promotion {
+  color: #515151;
+  border: 2px solid #515151;
+}
+
+.btn.btn--promotion:hover {
+  color: #fff;
+  background-color: #515151;
+}
 header {
     background-color: rgb(246, 245, 240);
         /* background-color: yellow; */
@@ -83,6 +92,7 @@ header>.inner {
     height: 120px;
     background-color: rgb(246, 245, 240);
         /* background-color: orange; */
+        /* header .badges에서 z-index: -1; 해줘도 됨 */
           z-index: 1;
 }
 
@@ -94,8 +104,6 @@ header .inner .logo {
     bottom: 0px;
     margin: auto 0;
 }
-
-
 
 header .sub-menu {
     /* 서브 메뉴, 검색을 수평 정렬 */
@@ -444,16 +452,29 @@ header .badges .badge {
   /* 중앙정렬 */
   justify-content: center;
   align-items: center;
+  /* z-index: 100; */
 }
 
 .notice .notice-line .inner .inner__right .toggle-promotion .material-symbols-outlined {
   font-size: 30px;
 }
 
-/* promotion */
+/* notice promotion */
 .notice .promotion {
   height: 693px;
-  background-color: #fff;
+  background-color: #f6f5ef;
+    position: relative;
+    margin-top: 22px;
+    /* promotion.hide의 height:0을 사용하는 경우 활성화, display: none 혹은 opacity: 0을 사용하면 비활성화 */
+    transition: height 0.4s;
+    overflow: hidden;
+  }
+  
+  .notice .promotion.hide {
+    /* display: none; */
+    /* opacity: 0; */
+    /* height:0;을 쓰면 promotion의 transition과 overflow는 비활성화 */
+    height: 0;
 }
 
 .notice .promotion .swiper-container {
@@ -467,13 +488,97 @@ header .badges .badge {
   height: 553px;
   /* 화면을 확대/축소해도 중앙에 위치하도록 함 */
   /* ★★실무에서 많이 사용하는 방법이므로 알아둘 것 */
+  /* <방법 1> */
   position: absolute;
   left: 50%;
   margin-left: calc((819px * 3 + 20px) / -2);
-  /* 방법 2>
+  /* <방법 2>
   right: 50%;
   margin-right: calc((819px * 3 + 20px) / -2);
   */
-  /* 방법 3> 위의 방법보다 가독성이 떨어짐
+  /* <방법 3> 위의 방법보다 가독성이 떨어짐
   margin-left: -1228px;*/
+}
+.notice .promotion .swiper-container .swiper-slide {
+  /* 양 옆 슬라이드 화면을 흐릿하게 함 */
+  opacity: .5;
+  /* 중앙에 오는 것을 서서히 또렷하게 하도록 transition 사용 */
+  transition: opacity 1s;
+}
+
+.notice .promotion .swiper-container .swiper-slide-active {
+  /* 중앙 슬라이드 화면을 또렷하게 함 */
+  opacity: 1;
+}
+
+.notice .promotion .swiper-container .swiper-slide .btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.notice .promotion .swiper-pagination {
+  /* 부모요소 => .notice .promotion */
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 40px;
+}
+
+.notice .promotion .swiper-pagination .swiper-pagination-bullet {
+  /* background-color: transparent;
+  background-image: url('../images/promotion_slide_pager.png'); */
+  /* 사진 대신, 원을 만들어도 됨
+    => 원을 만들면 .swiper-pagination-bullet-active의
+       background-color와 image는 주석처리 할 것 */
+  border-radius: 50%;
+  width: 18px;
+  height: 16px;
+  margin-right: 18px;
+  display: inline-block;
+}
+
+.notice .promotion .swiper-pagination .swiper-pagination-bullet-active {
+  /* background-image: url('../images/promotion_slide_pager_on.png'); */
+}
+
+/* navigation 버튼 */
+.notice .promotion .swiper-prev,
+.notice .promotion .swiper-next {
+  width: 42px;
+  height: 42px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  position: absolute;
+  top: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.notice .promotion .swiper-prev {
+  left: 50%;
+  margin-left: -480px;
+}
+
+.notice .promotion .swiper-next {
+  right: 50%;
+  margin-right: -480px;
+}
+
+.notice .promotion .swiper-prev:hover,
+.notice .promotion .swiper-next:hover {
+  background-color: #333;
+  color: #fff;
+  transition: .3s;
+}
+
+.rewards {
+  width: 100%;
+  height: 400px;
+  background-color: orange;
 }

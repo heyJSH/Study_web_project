@@ -37,7 +37,7 @@ $('input').focus(function() {
 
 // inputbox 포커스를 잃을 때
 $('input').blur(function() {
-    $('input').attr('placeholder', '')
+    $('input').attr('placeholder', '');
 });
 
 // 스크롤 내리면 배지 숨기기
@@ -48,14 +48,16 @@ window.addEventListener('scroll', _.throttle(function () {
     //   $('.badges').hide();
       // gsap.to(요소, 지속시간, 옵션)
       gsap.to('header .badges', 0.4, {
-        opacity: 0
+        opacity: 0,
+        diaplay: "none"
       });
     }else{
       // 배지 보이기
     //   $('.badges').show();
-        gsap.to('header .badges', 0.4, {
-            opacity: 1
-        });
+      gsap.to('header .badges', 0.4, {
+          opacity: 1,
+          display: "block"
+      });
     }
   
   }, 300)); // 0.3초
@@ -79,7 +81,7 @@ new Swiper('.notice-line .swiper-container', {
   loop: true, // 반복재생여부
   // autoplay: true   // 속도가 느려 아래와 같은 코드를 사용
   autoplay: {
-    delay: 2000  // 단위는 ms
+    delay: 2000,  // 단위는 ms
   }
 });
 
@@ -93,4 +95,30 @@ new Swiper('.promotion .swiper-container', {
     delay: 3000,  // 3초마다 슬라이드 바뀜
   },
   loop: true, // 반복재생여부
+  // swipe - pagination
+  pagination: {   // 페이지 번호 사용
+    el: '.promotion .swiper-pagination', // 페이지 번호 요소 선택자
+    clickable: true,  // 페이지 번호 클릭 제어 가능
+  },
+  // swipe - navigation
+  navigation: { // 슬라이드 이전/다음 버튼 사용
+    prevE1: '.promotion .swiper-prev',
+    nextE1: '.promotion .swiper-next'
+  }
+});
+
+// promotion 슬라이드 토글 기능
+const promotionE1 = document.querySelector('.promotion');
+const promotionToggleBtn = document.querySelector('.toggle-promotion');
+let isHidePromotion = false;
+
+promotionToggleBtn.addEventListener('click', function() {
+  // 누를때마다 boolean 값이 반대로 됨 => JS 비행기 예시 참조
+  isHidePromotion = !isHidePromotion;
+
+  if(isHidePromotion) {
+    promotionE1.classList.add('hide');
+  } else {
+    promotionE1.classList.remove('hide');
+  }
 });
