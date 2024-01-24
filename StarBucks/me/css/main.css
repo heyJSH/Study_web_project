@@ -1,17 +1,16 @@
 body {
-    /* google font => 구글 나눔고딕 */
+  /* google font => 구글 나눔고딕 */
     font-family: 'Nanum Gothic', sans-serif;
-    height: 3000px;
+  /* height: 3000px; */
 }
 
 /* google material icon */
 .material-symbols-outlined {
-    font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24;
-    /* font-size: 48px; */
+  font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24;
 }
 
 /* ★로고 이미지의 여백을 없애기 위해 이미지를 block으로 변경 */
@@ -24,17 +23,55 @@ a {
     text-decoration: none;
 }
 
-header {
-    background-color: rgb(246, 245, 240);
-    border-bottom: 1px solid #c8c8c8;
-    position: fixed;
-        width: 100%;
+.material-symbols-outlined.search-icon-style {
+  font-size: 48px;
 }
 
-header .inner {
+.material-symbols-outlined.home-icon-style {
+  font-size: 100px;
+}
+
+.btn {
+  width: 130px;
+  /* border: 2px solid #592B18; */
+  padding: 10px;
+  text-align: center;
+  border-radius: 4px;
+  /* color: #592B18; */
+  font-weight: 700;
+  font-size: 16px;
+  box-sizing: border-box;
+  display: block;
+  /* 서서히 나타나기 */
+  transition: all 0.4s;
+}
+
+/* .btn:hover {
+  background-color: #592B18;
+  color: #fff;
+} */
+
+.btn.btn--brown {
+  color: #592B18;
+  border: 2px solid #592B18;
+}
+
+.btn.btn--brown:hover {
+  background-color: #592B18;
+  color: #fff;
+}
+header {
+    background-color: rgb(246, 245, 240);
+        /* background-color: yellow; */
+    border-bottom: 1px solid #c8c8c8;
+    top: 0px;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+
+.inner {
     width: 1100px;
-    /* 범위를 알기위한 배경 색 */
-    /* background-color: orange; */
     /* 중앙 정렬 */
     margin: 0 auto;
     /* 로고 - 수직 정렬 */
@@ -44,17 +81,19 @@ header .inner {
 header>.inner {
     height: 120px;
     background-color: rgb(246, 245, 240);
-    /* z-index: 1; */
+        /* background-color: orange; */
+          z-index: 1;
 }
 
 header .inner .logo {
-    /* 수직 정렬 */
+    /* 수직정렬 */
     position: absolute;
     height: 75px;
     top: 0px;
     bottom: 0px;
     margin: auto 0;
 }
+
 
 
 header .sub-menu {
@@ -93,7 +132,6 @@ header .sub-menu ul.menu li:first-child::before {
 }
 
 header .sub-menu ul.menu li a {
-    /* background-color: #fff; */
     font-size: 13px;
     display: block;
     padding: 10px;
@@ -145,103 +183,155 @@ header .sub-menu .search .material-symbols-outlined {
 }
 
 header .main-menu {
-    display: flex;
+  display: flex;
     position: absolute;
     right: 0px;
     bottom: 0px;
 }
 
 header .main-menu .item {
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
     font-size: 13px;
 }
 
-header .main-menu .item .item_name {
-    padding: 10px 20px 34px 20px;
+header .main-menu .item .item__name {
+  padding: 10px 20px 34px 20px;
 }
 
-header .main-menu .item:hover .item_name {
-    background-color: #2C2A29;
-    color: rgb(102, 139, 27);
+header .main-menu .item:hover .item__name {
+  background-color: #2C2A29;
+  color: rgb(102, 139, 27);
     border-radius: 6px 6px 0 0;
 }
 
-header .main-menu .item .item_contents {
-    width: 100%;
-    position: fixed;
-    left: 0;
-    display: none;
+header .main-menu .item .item__contents {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  display: none;
 }
 
-header .main-menu .item:hover .item_contents {
-    display: block;
+header .main-menu .item:hover .item__contents {
+  display: block;
 }
 
-header .main-menu .item .item_contents .contents_menu {
-    background-color: #2C2A29;
-    /* height: 270px; */
-    color: white;
+header .main-menu .item .item__contents .contents__menu {
+  background-color: #2C2A29;
+  /* height: 270px; */
+  color: white;
 }
 
-header .main-menu .item .item_contents .contents_menu>ul {
-    padding: 20px 0;
-    display: flex;
+header .main-menu .item .item__contents .contents__menu>ul {
+  padding: 20px 0;
+  display: flex;
 }
 
-header .main-menu .item .item_contents .contents_menu>ul>li {
-    width: 220px;
+header .main-menu .item .item__contents .contents__menu>ul>li {
+  width: 220px;
 }
 
-header .main-menu .item .item_contents .contents_menu>ul>li h4 {
-    padding: 3px 0 12px 0;
-    font-size: 14px;
-    color: #fff;
+header .main-menu .item .item__contents .contents__menu>ul>li h4 {
+  padding: 3px 0 12px 0;
+  font-size: 14px;
+  color: #fff;
 }
 
-header .main-menu .item .item_contents .contents_menu>ul>li ul li {
-    padding: 5px 0;
+header .main-menu .item .item__contents .contents__menu>ul>li ul li {
+  padding: 5px 0;
+  font-size: 12px;
+  color: #999;
+  cursor: pointer;
+}
+
+header .main-menu .item .item__contents .contents__menu>ul>li ul li:hover {
+  color: rgb(102, 139, 27);
+}
+
+header .main-menu .item .item__contents .contents__texture {
+  padding: 26px 0;
+  /* height: 100px; */
+  background-image: url('../images/main_menu_pattern.jpg');
     font-size: 12px;
-    color: #999;
-    cursor: pointer;
 }
 
-header .main-menu .item .item_contents .contents_menu>ul>li ul li:hover {
-    color: rgb(102, 139, 27);
-}
-
-header .main-menu .item .item_contents .contents_texture {
-    padding: 26px 0;
-    /* height: 100px; */
-    background-image: url(../images/main_menu_pattern.jpg);
-    font-size: 12px;
-}
-
-header .main-menu .item .item_contents .contents_texture h4 {
-    color: #999;
-    font-weight: 900;
+header .main-menu .item .item__contents .contents__texture h4 {
+  color: #999;
+  font-weight: 000;
     margin-bottom: 7px;
 }
 
-header .main-menu .item .item_contents .contents_texture p {
-    color: rgb(102, 139, 27);
-    margin: 4px 0 18px;
+header .main-menu .item .item__contents .contents__texture p {
+  color: rgb(102, 139, 27);
+  margin: 4px 0 18px;
 }
 
 /* 사진 고정 */
 header .badges {
-    position: absolute;
+  position: absolute;
     top: 132px;
     right: 12px;
     /* 상단 메뉴를 볼 때, badges를 가리기 위함 
        =>header .inner 에서 z-index 값을 +1 해주어도 됨 */
-    z-index: -1;
+    /* z-index: -1; */
 }
 
 header .badges .badge {
-    border-radius: 10px;
+  border-radius: 10px;
     overflow: hidden;
     margin-bottom: 12px;
     cursor: pointer;
     /* 그림자: 위치, 크기 */
     box-shadow: 4px 4px 10px rgba(0, 0, 0.15);
+}
+.visual {
+  margin-top: 120px;
+  background-image: url("../images/visual_bg.jpg");
+  background-position: center;
+}
+
+.visual .inner {
+  height: 646px;
+  /* background-color: orange; */
+}
+
+.visual .title {
+  position: absolute;
+  top: 88px;
+  left: -10px;
+}
+
+.visual .title .btn {
+  position: absolute;
+  top: 259px;
+  left: 173px;
+}
+
+.visual .cup1.image {
+  position: absolute;
+  right: -47px;
+  bottom: 0px;
+}
+
+.visual .cup1.text {
+  position: absolute;
+  top: 38px;
+  right: 171px;
+}
+
+.visual .cup2.image {
+  position: absolute;
+  right: 162px;
+  bottom: 0px;
+}
+
+.visual .cup2.text {
+  position: absolute;
+  top: 321px;
+  right: 416px;
+}
+
+.visual .spoon {
+  position: absolute;
+  bottom: 0px;
+  left: 275px;
 }

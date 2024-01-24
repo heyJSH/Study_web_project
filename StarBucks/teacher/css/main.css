@@ -27,6 +27,40 @@ a {
   font-size: 100px;
 }
 
+.btn {
+  width: 130px;
+  /* border: 2px solid #592B18; */
+  padding: 10px;
+  text-align: center;
+  border-radius: 4px;
+  /* color: #592B18; */
+  font-weight: 700;
+  font-size: 16px;
+  box-sizing: border-box;
+  display: block;
+  transition: all 0.4s;
+}
+
+/*
+.btn:hover {
+  background-color: #592B18;
+  color: #fff;
+}
+*/
+
+.btn.btn--brown {
+  color: #592B18; 
+  border: 2px solid #592B18;
+}
+
+.btn.btn--brown:hover {
+  background-color: #592B18;
+  color: #fff;
+}
+
+
+
+
 header {
   background-color: rgb(246,245,240);
   /* background-color: yellow; */
@@ -34,6 +68,7 @@ header {
   top: 0px;
   position: fixed;
   width: 100%;
+  z-index: 5;
 }
 
 .inner {
@@ -236,4 +271,55 @@ header .badges .badge {
   box-shadow: 4px 4px 10px rgba(0,0,0.15);
 }
 
+.visual {
+  margin-top: 120px;
+  background-image: url("../images/visual_bg.jpg");
+  background-position: center;
+}
 
+.visual .inner {
+  height: 646px;
+  /* background-color: orange; */
+}
+
+.visual .title {
+  position: absolute;
+  top: 88px;
+  left: -10px;
+}
+
+.visual .title .btn {
+  position: absolute;
+  top: 259px;
+  left: 173px;
+}
+
+.visual .cup1.image  {
+  position: absolute;
+  right: -47px;
+  bottom: 0px;
+}
+
+.visual .cup1.text  {
+  position: absolute;
+  top: 38px;
+  right: 171px;
+}
+
+.visual .cup2.image  {
+  position: absolute;
+  right: 162px;
+  bottom: 0px;
+}
+
+.visual .cup2.text  {
+  position: absolute;
+  top: 321px;
+  right: 416px;
+}
+
+.visual .spoon  {
+  position: absolute;
+  bottom: 0px;
+  left: 275px;
+}
