@@ -59,3 +59,38 @@ window.addEventListener('scroll', _.throttle(function () {
     }
   
   }, 300)); // 0.3초
+
+// visual 애니메이션
+const fadeEls = document.querySelectorAll('.visual .fade-in');
+fadeEls.forEach(function(value, index) {
+  // 디버깅
+  console.log('index:' + index, value);
+  //gsap.to(요소, 지속시간, 옵션)
+  gsap.to(value, 1, {
+    delay: (index + 1) * 0.7, // 0.7초 → 1.4초 → 2.1초 → 2.8초
+    opacity: 1,
+  })
+});
+
+// notice swiper rolling
+new Swiper('.notice-line .swiper-container', {
+  // Optional parameters
+  direction: 'vertical',
+  loop: true, // 반복재생여부
+  // autoplay: true   // 속도가 느려 아래와 같은 코드를 사용
+  autoplay: {
+    delay: 2000  // 단위는 ms
+  }
+});
+
+// promotion swiper rolling
+// ★슬라이드 보여줄 개수와 크기를 맞추는 것이 중요★
+new Swiper('.promotion .swiper-container', {
+  slidesPerView: 3, // 한번에 보여줄 슬라이드 개수
+  spaceBetween: 10, // 슬라이드 사이 여백
+  centeredSlides: true, // 1번 슬라이드를 중앙에 위치
+  autoplay: { // 자동재생여부
+    delay: 3000,  // 3초마다 슬라이드 바뀜
+  },
+  loop: true, // 반복재생여부
+});

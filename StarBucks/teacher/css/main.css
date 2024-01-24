@@ -1,6 +1,6 @@
 body {
   font-family: 'Nanum Gothic', sans-serif;
-  /* height: 3000px; */
+  height: 3000px;
 }
 
 .material-symbols-outlined {
@@ -271,6 +271,7 @@ header .badges .badge {
   box-shadow: 4px 4px 10px rgba(0,0,0.15);
 }
 
+/* visual section */
 .visual {
   margin-top: 120px;
   background-image: url("../images/visual_bg.jpg");
@@ -322,4 +323,144 @@ header .badges .badge {
   position: absolute;
   bottom: 0px;
   left: 275px;
+}
+
+.visual .fade-in {
+  opacity: 0;
+}
+
+/* notice section */
+.notice {
+
+}
+
+.notice .notice-line {
+  height: 62px;
+  position: relative;
+}
+
+.notice .notice-line .bg-left {
+  background-color: #592B18;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.notice .notice-line .bg-right {
+  background-color: #fff;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.notice .notice-line .inner {
+  height: 62px;
+  display: flex;
+  /* border: 2px solid red; */
+  box-sizing: border-box;
+}
+
+.notice .notice-line .inner .inner__left {
+  width: 60%;
+  height: 100%;
+  background-color: #592B18;
+  display: flex;
+  align-items: center;
+}
+
+.notice .notice-line .inner .inner__left h2 {
+  color: #fff;
+  /* width: 500px; */
+  font-size: 16px;
+  font-weight: 600;
+  margin-right: 20px;
+}
+
+.notice .notice-line .inner .inner__left .swiper-container {
+  flex-grow: 1;
+  /* background-color: orange; */
+  height: 62px;
+}
+
+.notice .notice-line .inner .inner__left .swiper-container .swiper-wrapper {
+
+}
+
+.notice .notice-line .inner .inner__left .swiper-container .swiper-wrapper .swiper-slide {
+  display: flex;
+  align-items: center;
+  height: 62px;
+}
+
+.notice .notice-line .inner .inner__left .swiper-container .swiper-wrapper .swiper-slide a {
+  color: #fff;
+}
+
+.notice .notice-line .inner .inner__left .notice-line__more {
+  width: 62px;
+  height: 62px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notice .notice-line .inner .inner__left .notice-line__more .material-symbols-outlined {
+  color: #fff;
+  font-size: 30px;
+}
+
+.notice .notice-line .inner .inner__right {
+  width: 40%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.notice .notice-line .inner .inner__right h2 {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.notice .notice-line .inner .inner__right .toggle-promotion {
+  width: 62px;
+  height: 62px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notice .notice-line .inner .inner__right .toggle-promotion .material-symbols-outlined {
+  font-size: 30px;
+}
+
+/* notice promotion */
+.notice .promotion {
+  height: 693px;
+  background-color: #fff;
+}
+
+.notice .promotion .swiper-container {
+  /* 819px 슬라이드 3개와 그 사이 여백 10px = 2477px */
+  width: calc(819px * 3 + 20px);
+  /* width: calc(100% - 50px);*/
+  /* width: 2477px; */
+  /* background-color: orange;*/
+  font-size: 60px;
+  text-align: center;
+  height: 553px;
+  position: absolute;
+  left: 50%;
+  margin-left: calc((819px * 3 + 20px) / -2);
+  /*
+  right: 50%;
+  margin-right: calc((819px * 3 + 20px) / -2);
+  */
+  /* margin-left: -1228px;*/
 }

@@ -30,6 +30,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
   <!-- gsap ScrollToPlugin 라이브러리 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
+  <!-- swiper 라이브러리 -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"></script>
+
   <script defer src="./js/main.js"></script>
 </head>
 
@@ -263,23 +267,98 @@
   <!-- visual -->
   <section class="visual">
     <div class="inner">
-      <div class="title">
+      <div class="title fade-in">
         <img src="./images/visual_title.png" alt="starbucks delightful" />
+        <!-- 클릭 시, 실행하지 않도록 javascript:void(0) -->
         <a href="javascript:void(0);" class="btn btn--brown">자세히 보기</a>
       </div>
-      <div class="">
+      <div class="fade-in">
         <img src="./images/visual_cup1.png" alt="new oatmeal latte" class="cup1 image" />
         <img src="./images/visual_cup1_text.png" alt="new oatmeal latte text" class="cup1 text" />
       </div>
-      <div class="">
+      <div class="fade-in">
         <img src="./images/visual_cup2.png" alt="new" class="cup2 image" />
         <img src="./images/visual_cup2_text.png" alt="new text" class="cup2 text" />
       </div>
-      <div class="">
+      <div class="fade-in">
         <img src="./images/visual_spoon.png" alt="spoon" class="spoon" />
       </div>
-    </div>
-  </section>
+      </div>
+      </section>
+      <!-- notice(공지사항) -->
+      <section class="notice">
+        <!-- notice line -->
+        <div class="notice-line">
+          <div class="bg-left">
+      
+          </div>
+          <div class="bg-right">
+      
+          </div>
+          <div class="inner">
+            <div class="inner__left">
+              <h2>공지사항</h2>
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a href="javascript:void(0)">[당첨자 발표] 뉴이어 전자영수증 이벤트</a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="javascript:void(0)">크리스마스 이벤트 발표</a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="javascript:void(0)">스타벅스 맛있어요~~~</a>
+                  </div>
+                </div>
+              </div>
+              <a href="javascript:void(0)" class="notice-line__more">
+                <span class="material-symbols-outlined">
+                  add_circle
+                </span>
+              </a>
+            </div>
+      
+            <div class="inner__right">
+              <h2>스타벅스 프로모션</h2>
+              <div class="toggle-promotion">
+                <span class="material-symbols-outlined">
+                  upload
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- 수평 슬라이드 promotion -->
+        <div class="promotion">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./images/promotion_slide1.jpg" alt="promotion1" />
+                <a href="#" class="btn">자세히 보기</a>
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/promotion_slide2.jpg" alt="promotion2" />
+                <a href="#" class="btn">자세히 보기</a>
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/promotion_slide3.jpg" alt="promotion3" />
+                <a href="#" class="btn">자세히 보기</a>
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/promotion_slide4.jpg" alt="promotion4" />
+                <a href="#" class="btn">자세히 보기</a>
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/promotion_slide5.jpg" alt="promotion5" />
+                <a href="#" class="btn">자세히 보기</a>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+      
+      </section>
 
 </body>
 </html>
